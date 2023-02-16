@@ -5,7 +5,7 @@ const http = require('http');
 const hostname = '127.0.0.1';
 
 var argv = require('minimist')(process.argv.slice(2));
-console.log(argv);
+//console.log(argv);
 
 const port = argv.port || 3000;
 
@@ -16,8 +16,7 @@ fs.readFile('./public/index.html', 'utf8', (err, data) => {
     console.error(err);
     return;
   }
-  console.log(data);
-});
+  
 
 
 const server = http.createServer((req, res) => {
@@ -28,6 +27,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {
   console.log(`Server listening on port ${port}`);
+});
 });
 
 // Require fs module
